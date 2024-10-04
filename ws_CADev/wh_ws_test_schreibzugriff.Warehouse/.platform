@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "wh_ws_test_schreibzugriff"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ac1dc69c-4464-4fc9-9e23-b0e99e48e820"
+  }
+}

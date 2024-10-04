@@ -1,0 +1,351 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "job_log",
+        "sourceLineageTag": "[job_control].[job_log]",
+        "columns": [
+          {
+            "name": "log_id",
+            "dataType": "int64",
+            "sourceColumn": "log_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "log_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "log_dt",
+            "dataType": "dateTime",
+            "sourceColumn": "log_dt",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "log_dt",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "log_returncode",
+            "dataType": "int64",
+            "sourceColumn": "log_returncode",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "log_returncode",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "log_message",
+            "dataType": "string",
+            "sourceColumn": "log_message",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "log_message",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "log_jcf_job_id",
+            "dataType": "string",
+            "sourceColumn": "log_jcf_job_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "log_jcf_job_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "log_modul",
+            "dataType": "string",
+            "sourceColumn": "log_modul",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "log_modul",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "job_log",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "job_control"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "job_returncode",
+        "sourceLineageTag": "[job_control].[job_returncode]",
+        "columns": [
+          {
+            "name": "rc_literal_cd",
+            "dataType": "string",
+            "sourceColumn": "rc_literal_cd",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "rc_literal_cd",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "rc_typ_cd",
+            "dataType": "string",
+            "sourceColumn": "rc_typ_cd",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "rc_typ_cd",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "rc_id",
+            "dataType": "int64",
+            "sourceColumn": "rc_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "rc_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "rc_text_de_desc",
+            "dataType": "string",
+            "sourceColumn": "rc_text_de_desc",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "rc_text_de_desc",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "rc_text_en_desc",
+            "dataType": "string",
+            "sourceColumn": "rc_text_en_desc",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "rc_text_en_desc",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "job_returncode",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "job_control"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      },
+      {
+        "name": "vw_job_log",
+        "sourceLineageTag": "[job_control].[vw_job_log]",
+        "columns": [
+          {
+            "name": "log_id",
+            "dataType": "int64",
+            "sourceColumn": "log_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "log_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "log_dt",
+            "dataType": "dateTime",
+            "sourceColumn": "log_dt",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "log_dt",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "log_returncode",
+            "dataType": "int64",
+            "sourceColumn": "log_returncode",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "log_returncode",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "log_message",
+            "dataType": "string",
+            "sourceColumn": "log_message",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "log_message",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "log_jcf_job_id",
+            "dataType": "string",
+            "sourceColumn": "log_jcf_job_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "log_jcf_job_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "log_modul",
+            "dataType": "string",
+            "sourceColumn": "log_modul",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "log_modul",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "vw_job_log",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "job_control"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "True"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

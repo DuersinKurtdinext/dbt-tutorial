@@ -1,0 +1,178 @@
+{
+  "compatibilityLevel": 1604,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.134.7433.1 (Main)"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"DatabaseQuery\"]"
+      }
+    ],
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "annotations": [
+          {
+            "name": "PBI_IncludeFutureArtifacts",
+            "value": "False"
+          }
+        ],
+        "expression": [
+          "let",
+          "    database = Sql.Database(\"SQJSOUFMNL5UHPLVUC37CEP35I-5ZZHWJQNYBQULIXSJUT7H5DZZ4.datawarehouse.fabric.microsoft.com\", \"e1a4eea5-eba1-41bf-82ca-1acf278b3493\")",
+          "in",
+          "    database"
+        ],
+        "kind": "m",
+        "lineageTag": "158c9b37-9926-4481-8850-44063cd7113c"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "vw_job_log",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "log_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "da1c25df-b21e-43a1-a1e8-1d29cda0883c",
+            "sourceColumn": "log_id",
+            "sourceLineageTag": "log_id",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "log_dt",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "b3648da2-6e97-490c-afb6-966e9f3b2051",
+            "sourceColumn": "log_dt",
+            "sourceLineageTag": "log_dt",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "log_returncode",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ac7fc741-a4cc-4717-8ad9-7f86890b147b",
+            "sourceColumn": "log_returncode",
+            "sourceLineageTag": "log_returncode",
+            "sourceProviderType": "int",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "log_message",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c53f3078-4b86-4c7c-8644-283416173b0f",
+            "sourceColumn": "log_message",
+            "sourceLineageTag": "log_message",
+            "sourceProviderType": "varchar(300)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "log_jcf_job_id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a5799523-423b-4015-8e2a-46cb3f4a1000",
+            "sourceColumn": "log_jcf_job_id",
+            "sourceLineageTag": "log_jcf_job_id",
+            "sourceProviderType": "varchar(300)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "log_modul",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "aafee15a-7467-4cb9-b918-97491466d884",
+            "sourceColumn": "log_modul",
+            "sourceLineageTag": "log_modul",
+            "sourceProviderType": "varchar(255)",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "073bb7a0-a41d-48ab-81a0-b135af9f9d9f",
+        "partitions": [
+          {
+            "name": "vw_job_log",
+            "mode": "directLake",
+            "source": {
+              "entityName": "vw_job_log",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "job_control",
+              "type": "entity"
+            }
+          }
+        ],
+        "sourceLineageTag": "[job_control].[vw_job_log]"
+      }
+    ]
+  }
+}

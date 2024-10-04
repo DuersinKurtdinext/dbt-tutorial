@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "lh_ws_test_schreibzugriff"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "78ad1097-9524-4479-9dc8-3c0d6310433a"
+  }
+}
